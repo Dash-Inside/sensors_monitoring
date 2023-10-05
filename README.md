@@ -1,3 +1,3 @@
-# sensors_monitoring
+# sensors_monitoring project
 
-A new Flutter project.
+System for monitoring sensors in factories using various monitoring and notification systems.
