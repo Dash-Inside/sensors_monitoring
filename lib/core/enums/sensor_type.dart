@@ -1,0 +1,4 @@
+enum SensorType {
+  temperature,
+  humidity,
+}
