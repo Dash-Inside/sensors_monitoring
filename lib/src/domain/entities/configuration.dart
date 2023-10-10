@@ -1,17 +1,17 @@
 import 'package:equatable/equatable.dart';
-import 'package:sensors_monitoring/src/domain/entities/sensor.dart';
 
 class Configuration extends Equatable {
-  final int id;
+  final String id;
   final String title;
-  final List<Sensor> sensors;
-
+  final List<String> sensorsId;
+  final List<String> graphicsId;
   @override
   List<Object?> get props => [id];
 
   const Configuration({
     required this.id,
     required this.title,
-    required this.sensors,
+    required this.sensorsId,
+    required this.graphicsId,
   });
 }

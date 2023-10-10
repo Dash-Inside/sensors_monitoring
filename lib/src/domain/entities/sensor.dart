@@ -1,13 +1,11 @@
 import 'package:equatable/equatable.dart';
-import 'package:sensors_monitoring/core/enums/sensor_type.dart';
+import 'package:sensors_monitoring/src/domain/entities/enums/sensor_type.dart';
 
 class Sensor extends Equatable {
-  final int id;
+  final String id;
   final String name;
   final SensorType type;
-  final String details;
-  final List<double> values;
-
+  final SensorApi api;
   @override
   List<Object?> get props => [id];
 
@@ -15,7 +13,6 @@ class Sensor extends Equatable {
     required this.id,
     required this.name,
     required this.type,
-    required this.details,
-    required this.values,
+    required this.api,
   });
 }
