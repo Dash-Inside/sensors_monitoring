@@ -29,7 +29,11 @@ class SensorWidget extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
           boxShadow: [
-            BoxShadow(offset: Offset(3, 2), blurRadius: 5, color: Colors.grey)
+            BoxShadow(
+              offset: Offset(3, 2),
+              blurRadius: 5,
+              color: Colors.grey,
+            ),
           ],
           color: colorScheme.surface,
           borderRadius: const BorderRadius.all(

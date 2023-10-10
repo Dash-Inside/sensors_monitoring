@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AddSensorWidget extends StatelessWidget {
   final void Function()? onTap;
+
   const AddSensorWidget({
     super.key,
     this.onTap,
@@ -19,7 +20,11 @@ class AddSensorWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
-            BoxShadow(offset: Offset(3, 2), blurRadius: 5, color: Colors.grey)
+            const BoxShadow(
+              offset: Offset(3, 2),
+              blurRadius: 5,
+              color: Colors.grey,
+            ),
           ],
           borderRadius: BorderRadius.all(
             Radius.circular(16.0),
