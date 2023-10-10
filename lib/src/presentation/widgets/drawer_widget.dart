@@ -15,7 +15,7 @@ class DrawerWidget extends StatelessWidget {
     return AnimatedBuilder(
       animation: controller,
       builder: (context, child) {
-        final double width = controller.isOpen ? 350 : 60;
+        final double width = controller.isOpen ? 350 : 56;
 
         return Container(
           width: width,

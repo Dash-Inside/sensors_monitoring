@@ -14,17 +14,29 @@ class HomeWidget extends StatelessWidget {
 
     return Column(
       children: [
-        Row(
-          children: [
-            Text(
-              'Sensors',
-              style: textTheme.bodyMedium?.copyWith(color: colorScheme.secondary),
-            ),
-            Text(
-              'Grapghics',
-              style: textTheme.bodyMedium?.copyWith(color: colorScheme.tertiary),
-            ),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(
+            left: 64.0,
+            top: 16.0,
+            bottom: 16.0,
+          ),
+          child: Row(
+            children: [
+              Text(
+                'Sensors',
+                style: textTheme.bodyMedium?.copyWith(
+                  color: colorScheme.secondary,
+                ),
+              ),
+              const SizedBox(width: 16.0),
+              Text(
+                'Graphics',
+                style: textTheme.bodyMedium?.copyWith(
+                  color: colorScheme.tertiary,
+                ),
+              ),
+            ],
+          ),
         ),
         Wrap(
           spacing: spacing,
@@ -34,11 +46,7 @@ class HomeWidget extends StatelessWidget {
             SensorWidget(cardName: 'Sensor A', temperature: '100', temperatureChange: '5'),
             SensorWidget(cardName: 'Sensor B', temperature: '100', temperatureChange: '5'),
             SensorWidget(cardName: 'Sensor C', temperature: '100', temperatureChange: '5'),
-            SensorWidget(
-              cardName: 'Sensor D',
-              temperature: '100',
-              temperatureChange: '5',
-            ),
+            SensorWidget(cardName: 'Sensor D', temperature: '100', temperatureChange: '5'),
           ],
         ),
       ],
