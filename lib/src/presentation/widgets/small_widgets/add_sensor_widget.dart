@@ -12,13 +12,14 @@ class AddSensorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
     final TextTheme textTheme = Theme.of(context).textTheme;
+
     return InkWell(
       onTap: onTap,
       child: Container(
         height: 200.0,
         width: 280.0,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: colorScheme.surface,
           boxShadow: [
             const BoxShadow(
               offset: Offset(3, 2),
@@ -26,7 +27,7 @@ class AddSensorWidget extends StatelessWidget {
               color: Colors.grey,
             ),
           ],
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(16.0),
           ),
         ),
