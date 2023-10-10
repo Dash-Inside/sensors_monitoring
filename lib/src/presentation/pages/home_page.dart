@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sensors_monitoring/src/presentation/widgets/drawer_widget.dart';
-import 'package:sensors_monitoring/src/presentation/widgets/small_widgets/sensor_widget.dart';
+import 'package:sensors_monitoring/src/presentation/widgets/home_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -16,6 +16,9 @@ class HomePage extends StatelessWidget {
         child: Row(
           children: [
             DrawerWidget(),
+            Expanded(
+              child: HomeWidget(),
+            ),
           ],
         ),
       ),
