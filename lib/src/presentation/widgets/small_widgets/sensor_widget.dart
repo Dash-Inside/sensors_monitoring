@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class SensorWidget extends StatelessWidget {
   static const double containerHeight = 200.0;
@@ -53,7 +54,7 @@ class SensorWidget extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: Placeholder(),
+                child: SfCartesianChart(),
               ),
             ),
             Row(
