@@ -1,20 +1,30 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:sensors_monitoring/src/presentation/controllers/monitoring_drawer_controller.dart';
-import 'package:sensors_monitoring/src/presentation/widgets/search_widget.dart';
-import 'dart:math';
+import 'package:sensors_monitoring/src/presentation/pages/search_dialog.dart';
 import 'package:sensors_monitoring/src/presentation/widgets/small_widgets/filled_button_widget.dart';
 
 class DrawerWidget extends StatelessWidget {
-  const DrawerWidget({super.key});
+  late final MonitoringDrawerController controller;
+
+  DrawerWidget({super.key}) {
+    controller = MonitoringDrawerController();
+  }
 
   @override
   Widget build(BuildContext context) {
-    MonitoringDrawerController controller = MonitoringDrawerController();
-
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
-    return AnimatedBuilder(
-      animation: controller,
+    void onSearchPressed() {
+      showDialog(
+        context: context,
+        builder: (_) => SearchDialog(),
+      );
+    }
+
+    return ListenableBuilder(
+      listenable: controller,
       builder: (context, child) {
         final double width = controller.isOpen ? 350 : 56;
 
@@ -36,7 +46,13 @@ class DrawerWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
                         children: [
-                          SearchWidget(),
+                          IconButton(
+                            onPressed: onSearchPressed,
+                            icon: Icon(
+                              Icons.search,
+                              color: colorScheme.surface,
+                            ),
+                          ),
                           IconButton(
                             onPressed: () {},
                             icon: Icon(
@@ -48,7 +64,7 @@ class DrawerWidget extends StatelessWidget {
                           IconButton(
                             onPressed: controller.onDrawerButtonPressed,
                             icon: Transform.rotate(
-                              angle: 180 * pi / 180,
+                              angle: 180 * math.pi / 180,
                               child: Icon(
                                 Icons.start,
                                 color: colorScheme.surface,
@@ -99,7 +115,13 @@ class DrawerWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SearchWidget(),
+                    IconButton(
+                      onPressed: onSearchPressed,
+                      icon: Icon(
+                        Icons.search,
+                        color: colorScheme.surface,
+                      ),
+                    ),
                     IconButton(
                       onPressed: () {},
                       icon: Icon(
