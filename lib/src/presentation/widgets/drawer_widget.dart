@@ -150,8 +150,6 @@ class DrawerWidget extends StatelessWidget {
 }
 
 class _DividerWidget extends StatelessWidget {
-  static const double dividerThickness = 2.0;
-  static const double dividerHeight = 0.0;
   final String textInDivider;
 
   const _DividerWidget({
@@ -166,33 +164,38 @@ class _DividerWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Expanded(
-          child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Divider(
-              height: dividerHeight,
-              thickness: dividerThickness,
-              color: colorScheme.surface,
-            ),
-          ),
-        ),
+        _ExpandedContainer(),
         Text(
           textInDivider,
           style: textTheme.headlineSmall?.copyWith(
             color: colorScheme.surface,
           ),
         ),
-        Expanded(
-          child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Divider(
-              height: dividerHeight,
-              thickness: dividerThickness,
-              color: colorScheme.surface,
-            ),
-          ),
-        ),
+        _ExpandedContainer(),
       ],
+    );
+  }
+}
+
+class _ExpandedContainer extends StatelessWidget {
+  static const double dividerThickness = 2.0;
+  static const double dividerHeight = 0.0;
+
+  const _ExpandedContainer();
+
+  @override
+  Widget build(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+
+    return Expanded(
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Divider(
+          height: dividerHeight,
+          thickness: dividerThickness,
+          color: colorScheme.surface,
+        ),
+      ),
     );
   }
 }

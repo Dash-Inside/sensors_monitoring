@@ -12,44 +12,46 @@ class HomeWidget extends StatelessWidget {
     final TextTheme textTheme = Theme.of(context).textTheme;
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 64.0,
-            top: 16.0,
-            bottom: 16.0,
+    return Expanded(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 64.0,
+              top: 16.0,
+              bottom: 16.0,
+            ),
+            child: Row(
+              children: [
+                Text(
+                  'Sensors',
+                  style: textTheme.bodyMedium?.copyWith(
+                    color: colorScheme.secondary,
+                  ),
+                ),
+                const SizedBox(width: 16.0),
+                Text(
+                  'Graphics',
+                  style: textTheme.bodyMedium?.copyWith(
+                    color: colorScheme.tertiary,
+                  ),
+                ),
+              ],
+            ),
           ),
-          child: Row(
+          Wrap(
+            spacing: spacing,
+            runSpacing: spacing,
             children: [
-              Text(
-                'Sensors',
-                style: textTheme.bodyMedium?.copyWith(
-                  color: colorScheme.secondary,
-                ),
-              ),
-              const SizedBox(width: 16.0),
-              Text(
-                'Graphics',
-                style: textTheme.bodyMedium?.copyWith(
-                  color: colorScheme.tertiary,
-                ),
-              ),
+              AddSensorWidget(),
+              SensorWidget(cardName: 'Sensor A', temperature: '100', temperatureChange: '5'),
+              SensorWidget(cardName: 'Sensor B', temperature: '100', temperatureChange: '5'),
+              SensorWidget(cardName: 'Sensor C', temperature: '100', temperatureChange: '5'),
+              SensorWidget(cardName: 'Sensor D', temperature: '100', temperatureChange: '5'),
             ],
           ),
-        ),
-        Wrap(
-          spacing: spacing,
-          runSpacing: spacing,
-          children: [
-            AddSensorWidget(),
-            SensorWidget(cardName: 'Sensor A', temperature: '100', temperatureChange: '5'),
-            SensorWidget(cardName: 'Sensor B', temperature: '100', temperatureChange: '5'),
-            SensorWidget(cardName: 'Sensor C', temperature: '100', temperatureChange: '5'),
-            SensorWidget(cardName: 'Sensor D', temperature: '100', temperatureChange: '5'),
-          ],
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

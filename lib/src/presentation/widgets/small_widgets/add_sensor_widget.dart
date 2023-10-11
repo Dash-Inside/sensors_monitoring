@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AddSensorWidget extends StatelessWidget {
+  static const double containerHeight = 200.0;
+  static const double containerWidth = 280.0;
+
   final void Function()? onTap;
 
   const AddSensorWidget({
@@ -16,8 +19,8 @@ class AddSensorWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 200.0,
-        width: 280.0,
+        height: containerHeight,
+        width: containerWidth,
         decoration: BoxDecoration(
           color: colorScheme.surface,
           boxShadow: [
