@@ -44,6 +44,7 @@ class _TimelineButtonWidgetState extends State<TimelineButtonWidget> {
     return Row(
       children: [
         InkWell(
+          borderRadius: BorderRadius.circular(8.0),
           onTap: onButtonTap,
           child: DecoratedBox(
             decoration: BoxDecoration(

@@ -37,6 +37,10 @@ class ServiceApp extends StatelessWidget {
             fontWeight: FontWeight.w700,
             height: -0.2,
           ),
+          headlineLarge: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.w400,
+          ),
           headlineMedium: TextStyle(
             fontSize: 16.0,
             fontWeight: FontWeight.w400,

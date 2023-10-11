@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sensors_monitoring/src/presentation/controllers/monitoring_drawer_controller.dart';
+import 'package:sensors_monitoring/src/presentation/widgets/search_widget.dart';
 import 'dart:math';
 import 'package:sensors_monitoring/src/presentation/widgets/small_widgets/filled_button_widget.dart';
 
@@ -35,13 +36,7 @@ class DrawerWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
                         children: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.search,
-                              color: colorScheme.surface,
-                            ),
-                          ),
+                          SearchWidget(),
                           IconButton(
                             onPressed: () {},
                             icon: Icon(
@@ -104,13 +99,7 @@ class DrawerWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.search,
-                        color: colorScheme.surface,
-                      ),
-                    ),
+                    SearchWidget(),
                     IconButton(
                       onPressed: () {},
                       icon: Icon(
