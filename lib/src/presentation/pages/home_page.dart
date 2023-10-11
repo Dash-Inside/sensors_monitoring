@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
         child: Row(
           children: [
             DrawerWidget(),
-            MonitoryngSystemWidget(),
+            MonitoringSystemWidget(),
           ],
         ),
       ),

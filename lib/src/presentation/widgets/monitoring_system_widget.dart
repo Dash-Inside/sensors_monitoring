@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:sensors_monitoring/src/presentation/widgets/small_widgets/timeline_button_widge.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-class MonitoryngSystemWidget extends StatelessWidget {
+class MonitoringSystemWidget extends StatelessWidget {
   final String name;
 
-  const MonitoryngSystemWidget({
+  const MonitoringSystemWidget({
     super.key,
     this.name = 'data',
   });
